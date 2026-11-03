@@ -11,7 +11,7 @@ typedef struct {
     int capacity;  // Размер массива
 } List;
 
-//ИНИЦИАЛИЗАЦИЯ СПИСКА
+//ИНИЦИАЛИЗАЦИЯ списка
 void initList(List *list, int user_capacity) {
     list->capacity = user_capacity;
     list->data = (int *)calloc(list->capacity, sizeof(int));

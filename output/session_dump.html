@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List System Graphviz Session Log</title>
+<style>
+  body { font-family: monospace; background: #222222; color: #dddddd; padding: 20px; }
+  .session-title { font-size: 1.4em; font-weight: bold; color: #ffffff; margin-bottom: 20px; border-bottom: 1px solid #555555; padding-bottom: 5px; }
+  .step-block { border-bottom: 2px solid #444444; padding: 15px 0; margin-bottom: 15px; }
+  .step-header { font-size: 1.1em; color: #ffffff; font-weight: bold; margin-bottom: 5px; }
+  .meta-info { color: #aaaaaa; margin-bottom: 10px; font-size: 0.9em; }
+  .logic-chain { font-size: 0.95em; margin-top: 10px; color: #ffffff; }
+  img { background: #2b2b2b; padding: 15px; border: 1px solid #444444; max-width: 100%; height: auto; display: block; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="session-title">LIST DUMP SESSION LOG (SYSTEM GRAPHVIZ)</div>
+<div class="step-block">
+  <div class="step-header">> Creating an array with empty list</div>
+  <div class="meta-info">capacity: 6 | guard: 5 | free_head: 0</div>
+  <img src="step_0.png" alt="List Graph State">
+  <div class="logic-chain">
+    <b>Logical order:</b> guard(5) -> guard(5)
+  </div>
+</div>
+<div class="step-block">
+  <div class="step-header">> Adding element: 12</div>
+  <div class="meta-info">capacity: 6 | guard: 5 | free_head: 1</div>
+  <img src="step_1.png" alt="List Graph State">
+  <div class="logic-chain">
+    <b>Logical order:</b> guard(5) -> [0: 12] -> guard(5)
+  </div>
+</div>
+<div class="step-block">
+  <div class="step-header">> Adding element: 13 after 12</div>
+  <div class="meta-info">capacity: 6 | guard: 5 | free_head: 2</div>
+  <img src="step_2.png" alt="List Graph State">
+  <div class="logic-chain">
+    <b>Logical order:</b> guard(5) -> [0: 12] -> [1: 13] -> guard(5)
+  </div>
+</div>
+<div class="step-block">
+  <div class="step-header">> Adding element: 14 after 13</div>
+  <div class="meta-info">capacity: 6 | guard: 5 | free_head: 3</div>
+  <img src="step_3.png" alt="List Graph State">
+  <div class="logic-chain">
+    <b>Logical order:</b> guard(5) -> [0: 12] -> [1: 13] -> [2: 14] -> guard(5)
+  </div>
+</div>
+<div class="step-block">
+  <div class="step-header">> Removing element: 13</div>
+  <div class="meta-info">capacity: 6 | guard: 5 | free_head: 1</div>
+  <img src="step_4.png" alt="List Graph State">
+  <div class="logic-chain">
+    <b>Logical order:</b> guard(5) -> [0: 12] -> [2: 14] -> guard(5)
+  </div>
+</div>
+</body>
+</html>

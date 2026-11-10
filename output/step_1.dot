@@ -1,0 +1,25 @@
+digraph G {
+  bgcolor="#2b2b2b";
+  rankdir=LR;
+  edge [fontname="monospace", fontsize=9, arrowsize=0.7];
+  node [fontname="monospace", fontsize=10];
+  head_ptr [shape=box, style="filled,rounded", fillcolor="#ffd54f", color="#ffb300", fontcolor="#000000", label="HEAD"];
+  tail_ptr [shape=box, style="filled,rounded", fillcolor="#ce93d8", color="#ab47bc", fontcolor="#ffffff", label="TAIL"];
+  free_ptr [shape=box, style="filled,rounded", fillcolor="#a5d6a7", color="#66bb6a", fontcolor="#000000", label="FREE"];
+  node_0 [shape=Mrecord, style=filled, fillcolor="#3c4d3c", color="#66bb6a", fontcolor="#ffffff", label="index: 0|value: 12|<p> prev: 5 | <n> next: 5"];
+  node_1 [shape=Mrecord, style=filled, fillcolor="#2a2a2a", color="#555555", fontcolor="#888888", label="index: 1 (FREE)|value: 0|<p> prev: -1 | <n> next: 2"];
+  node_2 [shape=Mrecord, style=filled, fillcolor="#2a2a2a", color="#555555", fontcolor="#888888", label="index: 2 (FREE)|value: 0|<p> prev: -1 | <n> next: 3"];
+  node_3 [shape=Mrecord, style=filled, fillcolor="#2a2a2a", color="#555555", fontcolor="#888888", label="index: 3 (FREE)|value: 0|<p> prev: -1 | <n> next: 4"];
+  node_4 [shape=Mrecord, style=filled, fillcolor="#2a2a2a", color="#555555", fontcolor="#888888", label="index: 4 (FREE)|value: 0|<p> prev: -1 | <n> next: -1"];
+  node_5 [shape=Mrecord, style=filled, fillcolor="#4d3c3c", color="#ef5350", fontcolor="#ffffff", label="index: 5 (GUARD)|value: 0|<p> prev: 0 | <n> next: 0"];
+  head_ptr -> node_0 [color="#ffd54f", penwidth=1.5];
+  tail_ptr -> node_0 [color="#ce93d8", penwidth=1.5];
+  free_ptr -> node_1 [color="#a5d6a7", style=dashed, penwidth=1.5];
+  node_0:n -> node_5 [color="#66bb6a", penwidth=1.2, constraint=false];
+  node_0:p -> node_5 [color="#42a5f5", style=dashed, penwidth=1.2, constraint=false];
+  node_1:n -> node_2 [color="#888888", style=dashed, constraint=false];
+  node_2:n -> node_3 [color="#888888", style=dashed, constraint=false];
+  node_3:n -> node_4 [color="#888888", style=dashed, constraint=false];
+  node_5:n -> node_0 [color="#66bb6a", penwidth=1.2, constraint=false];
+  node_5:p -> node_0 [color="#42a5f5", style=dashed, penwidth=1.2, constraint=false];
+}
